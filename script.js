@@ -11,22 +11,28 @@ ratenumber.forEach(element => {
 score = element.innerText
 element.style.backgroundColor='hsl(25, 97%, 53%)'
 element.style.color= 'white'
-
+      submit.disabled = false
+      
    }) 
 });
 
-function out() {
-   if (!score) {
-      submit.disabled = true
-      submit.style.backgroundColor = 'grey'
-     
-return;
-   } else if (score > 0) {
-      submit.disabled = false
-      main.classList.add('hide')
-      section.classList.remove('hide')
-      let rateMsg = `You selected ${score} out of 5`
-      text.innerHTML = rateMsg; 
-}
+   function out() {
+      if (!score) {
+         submit.disabled = true 
+         const selectVal = document.createElement('p')
+         selectVal.textContent = 'kindly select a button'
+         selectVal.style.color = 'red'
+         selectVal.style.textAlign = 'center'
+         main.appendChild(selectVal)
+         return;
+      } 
+      else if (score > 0) {
+         submit.disabled = false
+         submit.style.backgroundColor = 'peach'
+         main.classList.add('hide')
+         section.classList.remove('hide')
+         let rateMsg = `You selected ${score} out of 5`
+         text.innerHTML = rateMsg;
+      }
 }
 submit.addEventListener('click', out);
