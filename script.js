@@ -1,5 +1,5 @@
 const submit = document.querySelector('.submit')
-const main = document.querySelector('main')
+const main = document.querySelector('article')
 const section = document.querySelector('section')
 section.classList.add('hide')
 const ratenumber = document.querySelectorAll('.one')
@@ -28,7 +28,6 @@ element.style.color= 'white'
       } 
       else if (score > 0) {
          submit.disabled = false
-         submit.style.backgroundColor = 'peach'
          main.classList.add('hide')
          section.classList.remove('hide')
          let rateMsg = `You selected ${score} out of 5`

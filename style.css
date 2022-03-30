@@ -14,7 +14,7 @@ body{
     min-height: 100vh;
 }
 
-main{
+article{
     background-color:  hsl(216, 12%, 18%);
     max-width:300px;        
     padding: 20px ;
@@ -41,7 +41,7 @@ p.ratingText{
     margin: 5px auto ;
     padding: 10px;
 }
-div{
+div.select{
     margin: 10px auto;
     display: flex;
     justify-content: space-around;
@@ -119,10 +119,10 @@ p.thanks{
     font-size: 0.9rem; 
 }
 @media screen and (min-width:1000px){
- main{
+ article{
     max-width:320px;
  }
- div{
+ div.select{
     margin: 5px;
     justify-content: space-evenly;
 }
@@ -166,7 +166,6 @@ section{
 svg.ratingpic{
     padding: 5px;
     margin: 5px auto;
-    display: flex;
 }
 h4{
     text-align: center;
