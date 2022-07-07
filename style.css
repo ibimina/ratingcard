@@ -70,11 +70,11 @@ label {
   color: hsl(216, 12%, 54%);
 }
 
-input[type="radio"]:focus{
+/* input[type="radio"]:focus{
   background-color: hsl(216, 12%, 54%);
     cursor: pointer;
     color: #fff;   
-}
+} */
  input[type="radio"]:checked+label{
   background-color: hsl(25, 97%, 53%);
   /* transition: 500ms ease ease-in-out; */
