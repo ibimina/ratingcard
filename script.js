@@ -1,37 +1,26 @@
-const submit = document.querySelector('.submit')
-const main = document.querySelector('article')
-const section = document.querySelector('section')
-section.classList.add('hide')
-const ratenumber = document.querySelectorAll('.one')
-let score =0
-const text = document.querySelector('.rate')
+//set ratings result page to display none
+//get the form element
+//add an event listener to the form element when the submit event occurs
+// when a radio tag is click get the value
+//set a condition to submit the form when a radio button is clicked
+// when user submits the form either by the enter key or the submit button
+// add the dispay none class to the ratings page
+//display the ratings result page with the radio value  display
 
-ratenumber.forEach(element => {
-   element.addEventListener('click',()=>{
-score = element.innerText
-element.style.backgroundColor='hsl(25, 97%, 53%)'
-element.style.color= 'white'
-      submit.disabled = false
-      
-   }) 
+const submitForm = document.querySelector("form");
+const text = document.querySelector(".ratings-text");
+const ratingsResult = document.querySelector(".thankyou");
+const ratingsPage = document.querySelector(".rate-us");
+
+ratingsResult.classList.add("class", "display");
+
+submitForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let ratings = submitForm.options.value;
+  if (ratings) {
+    console.log(ratings);
+    ratingsPage.classList.add("class", "display");
+    ratingsResult.classList.remove("class", "display");
+    text.textContent = `You selected ${ratings} out of 5`;
+  }
 });
-
-   function out() {
-      if (!score) {
-         submit.disabled = true 
-         const selectVal = document.createElement('p')
-         selectVal.textContent = 'kindly select a button'
-         selectVal.style.color = 'red'
-         selectVal.style.textAlign = 'center'
-         main.appendChild(selectVal)
-         return;
-      } 
-      else if (score > 0) {
-         submit.disabled = false
-         main.classList.add('hide')
-         section.classList.remove('hide')
-         let rateMsg = `You selected ${score} out of 5`
-         text.innerHTML = rateMsg;
-      }
-}
-submit.addEventListener('click', out);
